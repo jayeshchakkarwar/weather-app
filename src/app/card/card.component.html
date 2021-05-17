@@ -1,0 +1,22 @@
+<div id="divWeatherMain" class="pointer">
+    <div *ngIf="isDay" class="weatherWidgetRow">
+        <i class="fa fa-3x fa-sun sun"></i>
+    </div>
+    <div *ngIf="!isDay" class="weatherWidgetRow">
+        <i class="fa fa-3x fa-moon moon"></i>
+    </div>
+    <div class="weatherWidgetRow cloudDiv">
+        <i class="fa fa-cloud fa-3x cloud"></i>
+    </div>
+    <hr>
+    <div class="weatherWidgetRow" style="font-size: 25px;margin-top: 10px;">{{weather?.name}}</div>
+    <hr>
+    <div class="weatherWidgetRow" style="font-size: 32px;margin-top: 7px;">{{weather?.main.temp | number : '1.0-0'}}°C</div>
+    <div class="weatherWidgetRow" style="font-size: 12px; margin-top: 3px;">{{weather?.main.temp_min | number : '1.0-0'}}°C /
+        {{weather?.main.temp_max | number : '1.0-0'}}°C</div>
+    <div class="weatherWidgetRow" style="font-size: 12px; margin-top: 3px;">Feels Like: {{weather?.main.feels_like | number : '1.0-0'}}°C</div>
+    <div class="weatherWidgetRow" style="font-size: 12px; margin-top: 3px;">Humidity: {{weather?.main.humidity}}%</div>
+    <hr>
+    <div class="weatherWidgetRow" style="font-size: 12px;margin-top: 10px;"><span style="font-size: 16px; font-weight: bold;">Sunrise:</span> {{sunRiseTime}}</div>
+    <div class="weatherWidgetRow" style="font-size: 12px; margin-top: 3px;"><span style="font-size: 16px; font-weight: bold;">Sunset:</span> {{sunSetTime}}</div>
+</div>

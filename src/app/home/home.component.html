@@ -1,0 +1,17 @@
+<div *ngFor="let city of weatherStats">
+    <!-- <div *ngIf="!!LweatherStats"> -->
+        <app-card (click)="openCard(city.name)" [weatherDetails]="city"></app-card>
+    <!-- </div> -->
+    <!-- <div *ngIf="MweatherStats">
+        <app-card (click)="openCard()" [cityName]="'Mumbai'" [weatherDetails]="MweatherStats | async"></app-card>
+    </div>
+    <div *ngIf="BweatherStats">
+        <app-card (click)="openCard()" [cityName]="'Bali'" [weatherDetails]="BweatherStats | async"></app-card>
+    </div>
+    <div *ngIf="KweatherStats">
+        <app-card (click)="openCard()" [cityName]="'Krabi'" [weatherDetails]="KweatherStats | async"></app-card>
+    </div>
+    <div *ngIf="KLweatherStats">
+        <app-card (click)="openCard()" [cityName]="'Kuala Lumpur'" [weatherDetails]="KLweatherStats | async"></app-card>
+    </div> -->
+</div>

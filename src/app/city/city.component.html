@@ -1,0 +1,34 @@
+<div class="container">
+    <h2 *ngIf="forecastRes">{{forecastRes.city?.name}} {{forecastRes.city?.country}}</h2>
+    <div *ngFor="let item of list; let i = index">
+        <div class="mt3">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 id="weatherDate{{i}}"><i
+                            class="calendarIcon fa fa-calendar-alt"></i>{{item.dt_txt | date: 'EE d MMM y'}}</h3>
+                </div>
+                <div class="panel-body">
+                    <h3 class="dailySummaryHeading">Daily summary</h3>
+                    <p>
+                        <i *ngIf="item.weather[0].main === 'Clouds'" class="fas fa-cloud"></i>
+                        <i *ngIf="item.weather[0].main === 'Clear'" class="fas fa-cloud-sun"></i>
+                        <i *ngIf="item.weather[0].main === 'Rain'" class="fas fa-cloud-rain"></i>
+                        {{item.weather[0].description}}
+                    </p>
+                    <p>
+                        <i class="fa fa-thermometer-empty iconMarginRight"></i>
+                        {{item.main.temp_min}} - {{item.main.temp_max}} celsius
+                    </p>
+                    <p>
+                        <i class="fas fa-wind"></i>
+                        {{item.wind.speed}} meter/sec
+                    </p>
+                    <p>
+                        <i class="fas fa-water"></i>
+                        {{item.main.sea_level}} Sea-level
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
